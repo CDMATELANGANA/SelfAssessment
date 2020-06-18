@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition" template="/jsp/tiles/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/jsp/tiles/header.jsp" />
+		<put-attribute name="menu" value="/jsp/tiles/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/jsp/tiles/footer.jsp" />
+	</definition>
+
+
+	<definition name="definitionSch" template="/jsp/tiles/layoutSch.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+	<!-- New Addition -->
+	<definition name="NewReport" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body" value="/jsp/reports/NewReport.jsp" />
+	</definition>
+
+	<definition name="NewAssessmentApplication" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/NewAssessmentApplication.jsp" />
+	</definition>
+
+	<definition name="DtcpDashboard" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/DtcpDashboard.jsp"></put-attribute>
+	</definition>
+
+	<definition name="DtcpDashboardList" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/DtcpDashboardList.jsp"></put-attribute>
+	</definition>
+
+	<definition name="DtcpPdfReport" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/DtcpPdfReport.jsp"></put-attribute>
+	</definition>
+
+	<definition name="DtcpDashboardUlbWise" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/DtcpDashboardUlbWise.jsp"></put-attribute>
+	</definition>
+
+	<definition name="DtcpDashboardUlbDistrict" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/DtcpDashboardUlbDistrict.jsp"></put-attribute>
+	</definition>
+
+	<definition name="login" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/login/login.jsp"></put-attribute>
+	</definition>
+	<definition name="revenueULBReport" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/revenueULBReport.jsp"></put-attribute>
+	</definition>
+	<definition name="ptCalculatorDashboard" extends="base.definition">
+		<put-attribute name="title" value="PT Calculator Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptCalculatorDashboard.jsp"></put-attribute>
+	</definition>
+	<definition name="ptCalculatorDashboardDistrictWise"
+		extends="base.definition">
+		<put-attribute name="title" value="PT Calculator Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptCalculatorDashboardDistrictWise.jsp"></put-attribute>
+	</definition>
+	<definition name="ptCalculatorDashboardAllUlbWise" extends="base.definition">
+		<put-attribute name="title" value="PT Calculator Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptCalculatorDashboardAllUlbWise.jsp"></put-attribute>
+	</definition>
+	<definition name="ptCalculatorDashboardUlbWise" extends="base.definition">
+		<put-attribute name="title" value="PT Calculator Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptCalculatorDashboardUlbWise.jsp"></put-attribute>
+	</definition>
+
+	<!-- new Addition end -->
+
+	<definition name="welcome" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body" value="/jsp/welcome.jsp" />
+	</definition>
+
+	<!-- <definition name="home" extends="base.definition"> <put-attribute name="title" 
+		value="Home" /> <put-attribute name="body" value="/jsp/home.jsp"></put-attribute> 
+		</definition> -->
+
+	<definition name="taxapp" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body" value="/jsp/taxcal.jsp"></put-attribute>
+	</definition>
+
+
+
+	<definition name="selfassessment" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/SelfAssessmentApplication.jsp"></put-attribute>
+	</definition>
+	<!-- <definition name="selfassessmentTest" extends="base.definition"> <put-attribute 
+		name="title" value="Tax Calculator applicatoin" /> <put-attribute name="body" 
+		value="/jsp/reports/SelfAssessmentApplicationTest.jsp"></put-attribute> </definition> -->
+
+
+	<definition name="result" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body" value="/jsp/display.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="selfassessmentReceipt" extends="base.definition">
+		<put-attribute name="title" value="Application Acknowledgement" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/selfassessmentReceipt.jsp"></put-attribute>
+	</definition>
+
+	<definition name="feedback" extends="base.definition">
+		<put-attribute name="title" value="Feedback" />
+		<put-attribute name="body" value="/jsp/taxcal/feedback.jsp"></put-attribute>
+	</definition>
+
+	<!-- Reports -->
+
+	<definition name="assessmentReportDistrictWise" extends="base.definition">
+		<put-attribute name="title" value="District Wise Assessment Report " />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportDistrictWise.jsp"></put-attribute>
+	</definition>
+
+
+
+
+	<definition name="assessmentReportUlbWise" extends="base.definition">
+		<put-attribute name="title" value="Ulb Wise Assessment Report" />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportUlbWise.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="dashboard" extends="base.definition">
+		<put-attribute name="title" value="PT  New self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/dashboard.jsp"></put-attribute>
+	</definition>
+
+<definition name="oldDashboard" extends="base.definition">
+		<put-attribute name="title" value="PT Old self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/oldDashboard.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="schStart" extends="definitionSch">
+		<put-attribute name="body" value="/jsp/reports/schStart.jsp"></put-attribute>
+	</definition>
+
+	<!-- charan written -->
+	<definition name="selfassessmentCMS" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/SelfAssessmentApplicationCMS.jsp"></put-attribute>
+	</definition>
+
+	<definition name="selfassessmentMob" extends="base.definition">
+		<put-attribute name="title" value="Tax Calculator applicatoin" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/SelfAssessmentApplicationMob.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="assessmentReportDistrictWiseCMS" extends="base.definition">
+		<put-attribute name="title" value="District Wise Assessment Report " />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportDistrictWiseCMS.jsp"></put-attribute>
+	</definition>
+
+	<definition name="assessmentReportUlbWiseCMS" extends="base.definition">
+		<put-attribute name="title" value="Ulb Wise Assessment Report" />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportUlbWiseCMS.jsp"></put-attribute>
+	</definition>
+
+	<definition name="assessmentReportDistrictWiseMob" extends="base.definition">
+		<put-attribute name="title" value="District Wise Assessment Report " />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportDistrictWiseMob.jsp"></put-attribute>
+	</definition>
+
+	<definition name="assessmentReportUlbWiseMob" extends="base.definition">
+		<put-attribute name="title" value="Ulb Wise Assessment Report" />
+		<put-attribute name="body"
+			value="/jsp/reports/assessmentReportUlbWiseMob.jsp"></put-attribute>
+	</definition>
+
+	<definition name="dashboardCMS" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/dashboardCMS.jsp"></put-attribute>
+	</definition>
+
+	<definition name="dashboardMob" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Dashboard" />
+		<put-attribute name="body" value="/jsp/reports/dashboardMob.jsp"></put-attribute>
+	</definition>
+	<!-- Old DashboardConfig -->
+	<definition name="Olddashboard" extends="base.definition">
+		<put-attribute name="title" value="PT self Assessment Old Dashboard" />
+		<put-attribute name="body"
+			value="/jsp/reports/Olddashboard.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="OldassessmentReportDistrictWise" extends="base.definition">
+		<put-attribute name="title" value="District Wise Old  Assessment Report " />
+		<put-attribute name="body"
+			value="/jsp/reports/OldassessmentReportDistrictWise.jsp"></put-attribute>
+	</definition>
+	<definition name="OldassessmentReportUlbWise" extends="base.definition">
+		<put-attribute name="title" value="Ulb Wise Assessment Report" />
+		<put-attribute name="body"
+			value="/jsp/reports/OldassessmentReportUlbWise.jsp"></put-attribute>
+	</definition>
+
+	<!-- PTSelfAssessment Payment Config -->
+
+	<definition name="selfAssmntPaymentReceipet" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Payment Receipt" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/selfAssmntPaymentReceipet.jsp"></put-attribute>
+	</definition>
+
+	<definition name="paySelfPTAssmntAmount" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Payment Amount" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/paySelfPTAssmntAmount.jsp"></put-attribute>
+	</definition>
+
+
+
+	<!-- PTSelfAssessment Transaction Report and Status Config -->
+	<definition name="ptSelfAsmntTransactionReport" extends="base.definition">
+		<put-attribute name="title"
+			value="PT Self Assessment Transaction Report" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptSelfAsmntTransactionReport.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ptSelfAsmntTransactionStatusReport"
+		extends="base.definition">
+		<put-attribute name="title"
+			value="PT Self Assessment Transaction Status" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptSelfAsmntTransactionStatusReport.jsp"></put-attribute>
+	</definition>
+	
+	<!-- End Of PTSelfAssessment Transaction Report and Status Config -->
+	
+	<definition name="PT_OTP_Form" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Sms Services" />
+		<put-attribute name="body" value="/jsp/taxcal/PT_OTP_Form.jsp"></put-attribute>
+	</definition>
+	<definition name="PT_OTP_Conform" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Sms Services" />
+		<put-attribute name="body" value="/jsp/taxcal/PT_OTP_Conform.jsp"></put-attribute>
+	</definition>
+
+	<!-- Gateway Status report -->
+	<definition name="ptselfAssessmentAbstract" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentAbstract.jsp"></put-attribute>
+
+	</definition>
+	<definition name="ptselfAssessmentUlbReport" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentUlbReport.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="ptselfAssessmentUlbReports" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentUlbReports.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ptselfAssessmentnAllTransationReport"
+		extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentnAllTransationReport.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="ptselfAssessmentULBDetail" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentULBDetail.jsp"></put-attribute>
+	</definition>
+
+	<!-- Cash Counter Login -->
+
+	<definition name="cashCounterLogin" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body" value="/jsp/reports/cashCounterLogin.jsp"></put-attribute>
+	</definition>
+
+	<definition name="cashcounterPayment" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/cashcounterPayment.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="cashpaymentPtAssessmentRecipt" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/cashpaymentPtAssessmentRecipt.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ptselfAssessmentCashReport" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssessmentCashReport.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="ptCashCounterDetailReport" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptCashCounterDetailReport.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ptAssessmentCashULBDetail" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptAssessmentCashULBDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ptselfAssesmntAllCashTransationReport" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/reports/ptselfAssesmntAllCashTransationReport.jsp"></put-attribute>
+	</definition>
+	
+<definition name="CounterLoginQDD" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/CounterLoginQDD.jsp"></put-attribute>         
+	</definition>
+	<definition name="ptCashPaymentQDD" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptCashPaymentQDD.jsp"></put-attribute>        
+	</definition> 
+<definition name="ptCashPayment" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment gateway Reports" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptCashPayment.jsp"></put-attribute>        
+	</definition>
+<!-- For Download -->
+		<definition name="ApplicationSeachAssessmentCopy" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Copy" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/ApplicationSeachAssessmentCopy.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ApplicationSeachAssessmentCopyOtp" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Copy" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/ApplicationSeachAssessmentCopyOtp.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ApplicationDownloadAssCertificate" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Copy" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/ApplicationDownloadAssCertificate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ApplicationSeachAssessmentCopydownload" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Copy" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/ApplicationSeachAssessmentCopydownload.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtDemandSearch" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtDemandSearch.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtSingelDemandNotice" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtSingelDemandNotice.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtDemandNoticeOtp" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtDemandNoticeOtp.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtPaidHistory" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidHistory.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtPaidHistoryOtp" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidHistoryOtp.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtPaidHistorySearch" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidHistorySearch.jsp"></put-attribute>
+	</definition>
+
+	<definition name="PtPaidReceiptSearch" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidReceiptSearch.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="PtPaidReceiptOtp" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidReceiptOtp.jsp"></put-attribute>
+	</definition>	
+	
+	<definition name="PtPaidReceipt" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/ptDownload/PtPaidReceipt.jsp"></put-attribute>
+	</definition>
+<!-- For commissioner detail view  -->
+	<definition name="CmnrLogin" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/DetailReport/CmnrLogin.jsp"></put-attribute>
+	</definition>
+	<definition name="cmnrAsmtReportUlbWise" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/DetailReport/cmnrAsmtReportUlbWise.jsp"></put-attribute>
+	</definition>
+	<definition name="CmnrViewDetail" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Demand notice search" />
+		<put-attribute name="body"
+			value="/jsp/DetailReport/CmnrViewDetail.jsp"></put-attribute>
+	</definition>
+	<!-- For Initiate -->
+	<definition name="InitiateAllDistrictList" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Initiate" />
+		<put-attribute name="body"
+			value="/jsp/Initiate/InitiateAllDistrictList.jsp"></put-attribute>
+	</definition>
+	<definition name="InitiateSelectedDistrictUlbs" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Initiate" />
+		<put-attribute name="body"
+			value="/jsp/Initiate/InitiateSelectedDistrictUlbs.jsp"></put-attribute>
+	</definition>
+	<definition name="InitiateUlbWiseAssmentList" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Initiate" />
+		<put-attribute name="body"
+			value="/jsp/Initiate/InitiateUlbWiseAssmentList.jsp"></put-attribute>
+	</definition>
+	<definition name="InitiateUlbWiseDuplicateList" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment Initiate" />
+		<put-attribute name="body"
+			value="/jsp/Initiate/InitiateUlbWiseDuplicateList.jsp"></put-attribute>
+	</definition>
+	
+	<!-- End Initiate -->
+	
+	<!-- For Mearusement  -->
+	<definition name="PtSelfAsmtRecordView" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment find Asmt Detail" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/PtSelfAsmtRecordView.jsp"></put-attribute>        
+	</definition>
+	<definition name="PtSelfAsmtAppSelectionForm" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment salection form" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/PtSelfAsmtAppSelectionForm.jsp"></put-attribute>        
+	</definition>
+	<definition name="ptSelfAsmtFindForMeasurement" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment find Asmt for Measurement" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/ptSelfAsmtFindForMeasurement.jsp"></put-attribute>        
+	</definition>
+	<definition name="PtSelfAsmtRecordView" extends="base.definition">
+		<put-attribute name="title" value="PT Self Assessment from For Measurement" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/PtSelfAsmtRecordView.jsp"></put-attribute>        
+	</definition>
+	<!--Payment and Login  -->
+	<definition name="MeasurementPaySelfPTAssmntAmount" extends="base.definition">
+		<put-attribute name="title" value="Save Measurement Detail" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/MeasurementPaySelfPTAssmntAmount.jsp"></put-attribute>        
+	</definition>
+	<definition name="MeasurementCashCounterLogin" extends="base.definition">
+		<put-attribute name="title" value="Login For Cash Counter" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/MeasurementCashCounterLogin.jsp"></put-attribute>        
+	</definition>
+	<definition name="MeasurementCashcounterPayment" extends="base.definition">
+		<put-attribute name="title" value="Cash Counter payment" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/MeasurementCashcounterPayment.jsp"></put-attribute>        
+	</definition>
+	<definition name="MeasurementcashpaymentRecipt" extends="base.definition">
+		<put-attribute name="title" value="Cash Counter Payment Receipt" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/MeasurementcashpaymentRecipt.jsp"></put-attribute>        
+	</definition>
+	
+	<definition name="measurementSelfAssmntDigitalPaymentReceipet" extends="base.definition">
+		<put-attribute name="title" value="online Payment Receipt" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/measurementSelfAssmntDigitalPaymentReceipet.jsp"></put-attribute>        
+	</definition>
+	<definition name="SelfAssessmentFor75_SqrMetrs" extends="base.definition">
+		<put-attribute name="title" value="Self Assessment For G+1 Applicatoin" />
+		<put-attribute name="body"
+			value="/jsp/MeasurementTaxcal_75SqrMetrs/SelfAssessmentFor75_SqrMetrs.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- End Mearusement -->
+	
+	<!-- Add Measurement PTSelfAssessment Transaction Report and Status Config -->
+	<definition name="ptAddMeasurementSelfAsmntTransactionStatusReport" extends="base.definition">
+		<put-attribute name="title"
+			value="Add Measurement Assessment Transaction Status " />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptAddMeasurementSelfAsmntTransactionStatusReport.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ptAddMeasurementSelfAsmntTransactionReport"
+		extends="base.definition">
+		<put-attribute name="title"
+			value="Add Measurement Assessment Transaction Report" />
+		<put-attribute name="body"
+			value="/jsp/taxcal/ptAddMeasurementSelfAsmntTransactionReport.jsp"></put-attribute>
+	</definition>
+	
+	<!-- End Of Add Measurement  PTSelfAssessment Transaction Report and Status Config -->
+	<definition name="ccavRequestHandler" extends="base.definition">
+		<put-attribute name="title" value="HDFC Redirecct" />
+		<put-attribute name="body"
+			value="/jsp/Hdfc/ccavRequestHandler.jsp"></put-attribute>        
+	</definition>
+	
+</tiles-definitions>

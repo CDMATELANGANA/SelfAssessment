@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="License" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b3d0d9c-3a0e-4caf-99ca-f07f2443fb0c">
+	<property name="ireport.zoom" value="1.0245201830476063"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="288"/>
+	<parameter name="Unique_Req_No" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Trade_District" class="java.lang.String"/>
+	<parameter name="Trade_Lic_No" class="java.lang.String"/>
+	<parameter name="Trade_Date" class="java.lang.String"/>
+	<parameter name="Trade_Fee" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Trade_Pay_Date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Owner_Name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Owner_Father_Husband_Name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Trade_Title" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Trade_DateFrom" class="java.lang.String"/>
+	<parameter name="TradeDateTo" class="java.lang.String"/>
+	<parameter name="Trade_Door_No" class="java.lang.String"/>
+	<parameter name="Trade_Vill_City" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Municipal_Or_Corporation" class="java.lang.String"/>
+	<parameter name="TRADE_ULB" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     esuvidha_usr_signdata_mstr_tbl.`facimile_data` AS esuvidha_usr_signdata_mstr_tbl_facimile_data,
+     esuvidha_usr_signdata_mstr_tbl.`officer_name` AS esuvidha_usr_signdata_mstr_tbl_officer_name
+FROM
+     `esuvidha_usr_signdata_mstr_tbl` esuvidha_usr_signdata_mstr_tbl RIGHT JOIN `etrade_application` etrade_application ON esuvidha_usr_signdata_mstr_tbl.`ulb_id` = etrade_application.`TRADE_ULB`
+ Where etrade_application.`TRADE_ULB`=$P{TRADE_ULB} limit 1]]>
+	</queryString>
+	<field name="esuvidha_usr_signdata_mstr_tbl_facimile_data" class="java.io.InputStream"/>
+	<field name="esuvidha_usr_signdata_mstr_tbl_officer_name" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="555" height="799" uuid="d8c97049-96c3-4634-9464-c722e0b70481"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="140" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="8" width="544" height="29" uuid="e4f58a64-e585-4db7-a980-beebe562c246"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["OFFICE OF THE MUNICIPAL COUNCIL, "+$P{Trade_District}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="35" width="544" height="17" uuid="a376b1a5-480c-4446-baba-2546bb9855d6"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[(License Under Section 263 of the Telangana Municipalities Act. 1965)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="75" width="62" height="14" uuid="d8ae57f7-4f8d-4aa7-8976-1d88dccc899b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[License No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="75" width="235" height="14" uuid="25eae4bd-dba8-4705-ac88-1161ce4920bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Trade_Lic_No}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="445" y="75" width="103" height="14" uuid="4dfcab98-4304-4fd8-ac5d-1df773cefa78"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Trade_Date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="412" y="75" width="35" height="14" uuid="2fe0349b-cf22-42a6-9492-407627e2d856"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="103" width="311" height="14" uuid="5e046420-5738-4f1b-8089-2572a9cef6bb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Trade_Fee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="103" width="75" height="14" uuid="4376912d-27a1-4f6a-a648-bfd908868dae"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[License Fees :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="117" width="188" height="14" uuid="dac734a1-602f-46ec-83a0-66ed54bee700"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Trade_Pay_Date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="117" width="200" height="14" uuid="e6a79bc3-217f-4e99-ac30-2f3ccb964968"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Date of application for issue of licence :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="662" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="138" width="537" height="437" uuid="ffaa1852-7a18-44cc-b854-78cf6f67049e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="9"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="13.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. The License is not transferable and shall be renewed before (30) days, prior to the expiry of period granted.\n2. There must be a name board on the premises. The license should be in a fixed place.\n3. The building should be a pucka construction and there should be no cracks and should be provided with satisfactory lighting and ventilation arrangements.\n4. The building should be white washed twice in a year or earlier as directed by the Municipal Health Officer and furniture must be well painted and kept clean.\n5. The floor should be impervious.\n6. The used water should be drained out and connected to the Municipal drain.\n7. Only Chlorinated water should be used.\n8. The water must be supplied by a jug and practice of dipping the fingers in the water glasses supplying should be forth with discontinued.\n9. No licensee shall employee any person in his work who is suspected to suffering from any infectious disease or loathsome disease and on demand by the inspecting authority the Medical Certificate should be produced.\n10. Suppliers should be in a clean dress.\n11. Kitchen room must be of impervious floor and walls Free from any in sanitary condition and there should be a Chimney to a height of at least 6 feet above the on sufficient height for the let out of smoke.\n12. Every utensil or container used for manufacturing, preparing or containing any article of food for sale shall be kept all times in good order and in sanitary condition and should not be imperfectly enameled or tinned and should be provided with a tight fitting cover or kept closed or covered by properly fitting lid or by a close fitting or gauge not sufficiently fine, to protect the food completely from dust, dirt, flies and other insects.\n13. There must be provided with refuse receptacles in the premises.\n14. There must be covered vessels for storage of water to avoid contamination.\n15. The utensils be washed in hot water or with any disinfectant.\n16. The premises can be inspected without notice by any officer of the Municipality or the executive committee and instructions issued by them shall be compiled with.\n17. Any violation of the above will render the license being cancelled & the offenders Licensee shall be liable to prosecution."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="628" width="289" height="32" uuid="c98630b5-7579-49eb-81f8-fc9843214a04"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["COMMISSIONER,\n "+$P{Trade_District}.concat(" ").concat($P{Municipal_Or_Corporation})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="11" y="0" width="537" height="128" uuid="6faeb86c-aebc-4061-a177-79f6f9f25b3e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
+					<font fontName="Verdana" isBold="false" isItalic="false" pdfEncoding="CP1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="13.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["License is granted to <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\"> "+
+$P{Owner_Name}+" </style> S/o. W/o <style  isBold=\"true\" pdfFontName=\"Helvetica-Bold\"> "+
+$P{Owner_Father_Husband_Name}+"</style> for running the business of M/s. <style  isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+
+$P{Trade_Title}+"</style> at premises bearing Door No. <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$P{Trade_Door_No}+
+"</style> at Address <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$P{Trade_Vill_City}+", "+$P{Trade_District}+
+"</style> for a period from <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$P{Trade_DateFrom}+
+"</style> to <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$P{TradeDateTo}+
+"</style> subject to the condition that the license should comply the provision of the Act rules and regulation "+
+" of the Municipality and bound to comply with all the instructions in addition to the following restrictions imposed "+
+" by the license issuing authority given by the Municipality from time to time for running the above business (Trade) Non"+
+" compliance essential cancellation of the license without further notice."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="615" width="250" height="20" uuid="0d15bfe7-184a-4dec-a2e3-09fb47aefeb0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Application No: "+$P{Unique_Req_No}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="310" y="586" width="197" height="29" uuid="d57f740a-4662-42f2-a85b-68c7c17b3fde"/>
+				<imageExpression><![CDATA[$F{esuvidha_usr_signdata_mstr_tbl_facimile_data}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="261" y="615" width="287" height="13" uuid="f314b4dc-5b83-42b7-98c3-9dd3ed278fb1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{esuvidha_usr_signdata_mstr_tbl_officer_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

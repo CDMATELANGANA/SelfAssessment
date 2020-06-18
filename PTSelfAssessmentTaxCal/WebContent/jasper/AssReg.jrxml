@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="License" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b3d0d9c-3a0e-4caf-99ca-f07f2443fb0c">
+	<property name="ireport.zoom" value="1.0245201830476063"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="I_ASMTNO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VC_ONRSURNAME" class="java.lang.String"/>
+	<parameter name="VC_ONRNAME" class="java.lang.String"/>
+	<parameter name="VC_FTHRSURNAME" class="java.lang.String"/>
+	<parameter name="VC_FTHRNAME" class="java.lang.String"/>
+	<parameter name="VC_ONRDOORNO" class="java.lang.String"/>
+	<parameter name="I_ULBOBJID" class="java.lang.String"/>
+	<parameter name="grade_name" class="java.lang.String"/>
+	<parameter name="DISTRICT_NAME" class="java.lang.String"/>
+	<parameter name="ULB_NAME" class="java.lang.String"/>
+	<parameter name="Ulb" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="json">
+		<![CDATA[{
+	"grade_name":"sbdbdbd",
+	"DISTRICT_NAME":"durg",
+	"ULB_NAME":"ulb name"
+}]]>
+	</queryString>
+	<field name="grade_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DISTRICT_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ULB_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SEQ_NO" class="java.lang.String"/>
+	<field name="C_DATE" class="java.lang.String"/>
+	<field name="VC_ONRSURNAME" class="java.lang.String"/>
+	<field name="VC_ONRDOORNO" class="java.lang.String"/>
+	<field name="VC_ONRNAME" class="java.lang.String"/>
+	<field name="I_ASMTNO" class="java.lang.String"/>
+	<field name="VC_FTHRNAME" class="java.lang.String"/>
+	<field name="VC_FTHRSURNAME" class="java.lang.String"/>
+	<field name="PtHalfYearTax" class="java.lang.String"/>
+	<field name="VC_ULBNAME" class="java.lang.String"/>
+	<field name="VC_LCTYNAME" class="java.lang.String"/>
+	<title>
+		<band height="107" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="-2" width="544" height="29" uuid="e4f58a64-e585-4db7-a980-beebe562c246"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_ULBNAME}+" "+$F{grade_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="85" width="80" height="14" uuid="d8ae57f7-4f8d-4aa7-8976-1d88dccc899b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Sequence No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="85" width="114" height="14" uuid="25eae4bd-dba8-4705-ac88-1161ce4920bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEQ_NO}+" / 2019"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="445" y="85" width="103" height="14" uuid="4dfcab98-4304-4fd8-ac5d-1df773cefa78"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{C_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="412" y="85" width="35" height="14" uuid="2fe0349b-cf22-42a6-9492-407627e2d856"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="19" width="544" height="29" uuid="6c6399dd-fc23-47bc-af94-c49044deefd6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DISTRICT_NAME}+"  DISTRICT "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="159" y="44" width="244" height="27" uuid="e55fd3b3-5799-4725-99f8-aaf2d53f35f9"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Assessment Register Certificate ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="496" splitType="Stretch">
+			<textField>
+				<reportElement x="242" y="191" width="289" height="32" uuid="c98630b5-7579-49eb-81f8-fc9843214a04"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This document is produced electronically and therefore does not require a signature."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="11" y="12" width="537" height="100" uuid="6faeb86c-aebc-4061-a177-79f6f9f25b3e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
+					<font fontName="Verdana" isBold="false" isItalic="false" pdfEncoding="CP1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="13.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This is to certify that the house bearing Door No."+
+"<style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+
+$F{VC_ONRDOORNO}+"</style> and Assessment No.<style  isBold=\"true\" pdfFontName=\"Helvetica-Bold\"> "+$F{I_ASMTNO}+
+"</style> situated at <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$F{VC_LCTYNAME}+
+"</style> within <style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$F{ULB_NAME}+
+"</style> Muncipality is stands on the name of Sri/Smt:<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">"+$F{VC_ONRSURNAME} +$F{VC_ONRNAME}+
+"</style> S/o/W/o :<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\"> "+$F{VC_FTHRSURNAME}+$F{VC_FTHRNAME}+
+"</style> as per the available  records of the Muncipality."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="118" width="45" height="15" uuid="f04168fc-b0a2-4b0f-9f27-024779726276"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" To "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="163" width="250" height="15" uuid="5de8df62-78b7-4d87-8995-b9d29f3a97ed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DISTRICT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="176" width="77" height="15" uuid="f808c9c1-c0d0-4327-9564-6fdb2085cbf0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Taxdetail: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="133" width="250" height="15" uuid="1573238d-6a42-437e-9a83-00d4243b1342"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_ONRSURNAME}+$F{VC_ONRNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="149" width="250" height="15" uuid="0e7d6ae2-317f-472d-93e6-02f9b62d78a8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_ONRDOORNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="134" width="66" height="15" uuid="072931b4-e1cc-4388-a38b-db398035572f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Sri/Smt :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="148" width="66" height="15" uuid="8db0ce9f-5085-42db-afba-dae6245e71d8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Door No. :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="163" width="66" height="15" uuid="5f325e25-1c24-40d6-898f-b72080003726"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Locality :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="175" width="196" height="15" uuid="442f6fb8-3163-4416-b75a-eb48050488f6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PtHalfYearTax}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trade_provisional" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="214810f0-d9f5-44c8-a3df-7292c0022596">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="89"/>
+	<parameter name="MuncipalName" class="java.lang.String"/>
+	<parameter name="LinenceNo" class="java.lang.String"/>
+	<parameter name="RevenueWard" class="java.lang.String"/>
+	<parameter name="BlockNo" class="java.lang.String"/>
+	<parameter name="Locality" class="java.lang.String"/>
+	<parameter name="OwnerName" class="java.lang.String"/>
+	<parameter name="DoorNo" class="java.lang.String"/>
+	<parameter name="LicenceFee" class="java.lang.String"/>
+	<parameter name="Dated" class="java.lang.String"/>
+	<parameter name="TradeEndDate" class="java.lang.String"/>
+	<parameter name="Date" class="java.lang.String"/>
+	<parameter name="TRADE_ULB" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="StreetNo" class="java.lang.String"/>
+	<parameter name="VillgCity" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     esuvidha_usr_signdata_mstr_tbl.`facimile_data` AS esuvidha_usr_signdata_mstr_tbl_facimile_data,
+     esuvidha_usr_signdata_mstr_tbl.`officer_name` AS esuvidha_usr_signdata_mstr_tbl_officer_name
+FROM
+     `esuvidha_usr_signdata_mstr_tbl` esuvidha_usr_signdata_mstr_tbl RIGHT JOIN `etrade_application` etrade_application ON esuvidha_usr_signdata_mstr_tbl.`ulb_id` = etrade_application.`TRADE_ULB`
+ Where etrade_application.`TRADE_ULB`=$P{TRADE_ULB} limit 1]]>
+	</queryString>
+	<field name="esuvidha_usr_signdata_mstr_tbl_facimile_data" class="java.io.InputStream"/>
+	<field name="esuvidha_usr_signdata_mstr_tbl_officer_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="555" height="30" uuid="1eb6c9ad-1cdb-4d57-af33-23b447de0348"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Municipality Corporation/Council of "+$P{MuncipalName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="33" width="555" height="20" uuid="5e4a21ee-3227-4ad4-aa78-e0033172402b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Provisional Trade Licence Certificate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="68" width="103" height="20" uuid="116b155b-18f0-4428-b98d-4f47498edb0c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Request Number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="68" width="429" height="20" uuid="1dd32ed0-6f6f-4077-8f24-97fd8f4cc241"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LinenceNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="453" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="16" width="549" height="181" uuid="af92e28d-96f8-44e0-81b5-0785427327b8"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Verdana"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="1.8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This is to certify that Provisional Licence is given to Shri/Smt <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+$P{OwnerName}+"</style>"+
+" to carry on the trade operation of at premises, door no. <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+$P{DoorNo}+"</style> "+
+" street no. <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+$P{StreetNo}+"</style> "+
+" city/village <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+$P{VillgCity}+"</style> "+
+"under the provision of relevant sections to the factuality of the particulars furnished in the application/self assessment form/documents and subject to the revision and refixing of Licence Fees as per future verification of yard stick parameter.This provisional licnese is liable to be suspended/cancelled if any of the applicable terms and conditions are found to have been contravened or any situationarises out of this trade so as to cause nuisance/damage/harm to property or health of the public at large or if documents/grounds furnished in the application are found to be false and not true or if there is a change in ULB policy in licensing."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="205" width="331" height="20" uuid="1083f42e-ac3c-4df4-a6dd-2638ddbbc967"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Licence Fees Rs "+$P{LicenceFee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="226" width="331" height="20" uuid="21acf154-7ece-4c2a-b5a4-92e5f818cdb3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dated: "+$P{Dated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="258" width="549" height="84" uuid="96eb553d-e1b8-46c2-a632-a8c86d9ad876"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="Verdana"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Period of validity: This Certificate is valid till regular trade Licence is given or till <style  isBold=\"true\" forecolor=\"#000000\" pdfFontName=\"Helvetica-Bold\">"+$P{TradeEndDate}+"</style> which ever is earlier. This provisional Licence is only for TRADE PURPOSE.It does not confer any power or permission for either temporary or permanent exemption from the provisions of any other section of Act by-laws or rules in force."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement x="304" y="51" width="193" height="20" uuid="e1aa47d7-affc-4189-9315-4213a2fc6b80"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[Signature of authorized ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="71" width="46" height="20" uuid="16920163-7e1c-4e02-870a-043bc7b4d83e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[officer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="92" width="46" height="20" uuid="64794492-b342-4a69-8c48-d3987248dc99"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="92" width="205" height="20" uuid="8a75201c-54ef-45d8-b776-622164c70c63"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="71" width="205" height="20" uuid="e14b8eaa-4673-43bc-bfaa-4a282feab87c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{esuvidha_usr_signdata_mstr_tbl_officer_name}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="316" y="20" width="138" height="31" uuid="3c88cd8a-089d-4e1a-9ae5-7140d99a0c76"/>
+				<imageExpression><![CDATA[$F{esuvidha_usr_signdata_mstr_tbl_facimile_data}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="4" y="121" width="512" height="20" uuid="a83b709a-dc04-4b3b-aaf2-e537f625ba6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="9"/>
+				</textElement>
+				<text><![CDATA[Note: This certificate is automatically generated no signature required.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

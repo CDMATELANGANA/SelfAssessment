@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="License" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b3d0d9c-3a0e-4caf-99ca-f07f2443fb0c">
+	<property name="ireport.zoom" value="1.0245201830476063"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="105"/>
+	<parameter name="I_ASMTNO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VC_ONRSURNAME" class="java.lang.String"/>
+	<parameter name="VC_ONRNAME" class="java.lang.String"/>
+	<parameter name="VC_FTHRSURNAME" class="java.lang.String"/>
+	<parameter name="VC_FTHRNAME" class="java.lang.String"/>
+	<parameter name="VC_ONRDOORNO" class="java.lang.String"/>
+	<parameter name="I_ULBOBJID" class="java.lang.String"/>
+	<parameter name="grade_name" class="java.lang.String"/>
+	<parameter name="DISTRICT_NAME" class="java.lang.String"/>
+	<parameter name="ULB_NAME" class="java.lang.String"/>
+	<parameter name="Ulb" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="json">
+		<![CDATA[{
+	"grade_name":"sbdbdbd",
+	"DISTRICT_NAME":"durg",
+	"ULB_NAME":"ulb name"
+}]]>
+	</queryString>
+	<field name="grade_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DISTRICT_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ULB_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VC_ONRSURNAME" class="java.lang.String"/>
+	<field name="i_dmndno" class="java.lang.String"/>
+	<field name="VC_ONRNAME" class="java.lang.String"/>
+	<field name="i_asmtno" class="java.lang.String"/>
+	<field name="VC_ULBNAME" class="java.lang.String"/>
+	<field name="VC_LCTYNAME" class="java.lang.String"/>
+	<field name="I_RWNO" class="java.lang.String"/>
+	<field name="I_BLCKNO" class="java.lang.String"/>
+	<field name="d_adjdamt" class="java.lang.String"/>
+	<field name="d_pltyonarrs" class="java.lang.String"/>
+	<field name="d_arruauthcnstplty" class="java.lang.String"/>
+	<field name="d_arrlcs" class="java.lang.String"/>
+	<field name="d_arred" class="java.lang.String"/>
+	<field name="d_arrpt" class="java.lang.String"/>
+	<field name="d_crnuauthcnstplty" class="java.lang.String"/>
+	<field name="d_crnlcs" class="java.lang.String"/>
+	<field name="d_crned" class="java.lang.String"/>
+	<field name="d_crnpt" class="java.lang.String"/>
+	<field name="vc_dmndyear" class="java.lang.String"/>
+	<field name="dt_dmnddt" class="java.lang.String"/>
+	<field name="d_crnpt2" class="java.lang.String"/>
+	<field name="d_crned2" class="java.lang.String"/>
+	<field name="d_crnlcs2" class="java.lang.String"/>
+	<field name="d_crnuauthcnstplty2" class="java.lang.String"/>
+	<variable name="Current_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{d_crnpt}$F{d_crned}$F{d_crnlcs}$F{d_arruauthcnstplty}]]></variableExpression>
+	</variable>
+	<variable name="Arrears_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{d_arrpt}$F{d_arred}$F{d_arrlcs}$F{d_arruauthcnstplty}]]></variableExpression>
+	</variable>
+	<variable name="Current_frst_hlf_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{d_crnpt2}$F{d_crned2}$F{d_crnlcs2}$F{d_crnuauthcnstplty2}]]></variableExpression>
+	</variable>
+	<variable name="Total_Demand" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{Current_total}$V{Arrears_total}$V{Current_frst_hlf_total}$F{d_pltyonarrs}]]></variableExpression>
+	</variable>
+	<variable name="Demand_Adjs" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{d_adjdamt}$F{d_adjdamt}]]></variableExpression>
+	</variable>
+	<variable name="NetTotalDemand" class="java.lang.Double" calculation="Sum"/>
+	<title>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="85" width="80" height="14" uuid="d8ae57f7-4f8d-4aa7-8976-1d88dccc899b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Demand Bill No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="85" width="143" height="14" uuid="25eae4bd-dba8-4705-ac88-1161ce4920bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{i_dmndno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="96" y="99" width="124" height="14" uuid="4dfcab98-4304-4fd8-ac5d-1df773cefa78"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dt_dmnddt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="99" width="35" height="14" uuid="2fe0349b-cf22-42a6-9492-407627e2d856"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="58" width="286" height="20" uuid="e55fd3b3-5799-4725-99f8-aaf2d53f35f9"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[( TO BE RETAINED BY THE TAX PAYER )]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="19" width="239" height="20" uuid="fc5bcdba-bbca-47a2-ac55-66882b8e3097"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PROPERTY TAX DEMAND BILL"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="36" width="500" height="16" uuid="76a4cdcd-d8c3-4ffd-99fe-dddc2ef03e02"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(As per the Sec-91 and Provisions 29 to 34 of Schedule-II of APM Act. 1965)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="114" width="286" height="32" uuid="f04168fc-b0a2-4b0f-9f27-024779726276"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Remittance into the Account of Muncipal Commissioner $F{ULB_NAME}$F{grade_name} "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-3" y="146" width="549" height="1" uuid="c470af31-59e7-4e2b-858b-c5af6dc56ed7"/>
+			</line>
+			<textField>
+				<reportElement x="117" y="-2" width="363" height="30" uuid="206198fa-539b-4a81-b21f-896dd4ff13ff"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_ULBNAME}+" "+$F{grade_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="496" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="10" width="91" height="14" uuid="4c176ee1-6d02-4953-aad7-8b6dd76ace6b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Assessment No.  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="10" width="143" height="14" uuid="efbd2929-9daf-440a-ad0f-0667764da0c0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{i_asmtno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="22" width="143" height="14" uuid="e467c83c-4c61-417e-86b1-394f30c27849"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_ONRSURNAME}+" "+$F{VC_ONRNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="22" width="91" height="14" uuid="e925e5e6-7c2d-4787-b9ba-5fdef7b664c9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Name  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="36" width="143" height="14" uuid="c21dbc56-c6d2-498a-99ed-f91fd2d5a930"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{i_dmndno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="36" width="91" height="14" uuid="f2cd88da-74eb-4c33-994a-2814303d395b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Door  No.  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="52" width="143" height="14" uuid="d9209103-4981-4f5d-9157-9c9ed83ddcc0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VC_LCTYNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="52" width="91" height="14" uuid="ab7c6c2c-ddba-43a2-9272-8d65cf0229f8"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Locality  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="70" width="143" height="14" uuid="b2c6aec5-d8cb-4344-a0ca-9d69f1fa7405"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_RWNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="70" width="91" height="14" uuid="1ed19a47-d9aa-474f-ad93-708593a67c69"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Revenue ward   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="383" y="70" width="143" height="14" uuid="e83025fd-9d13-4ba8-99ef-c6d00fb1b279"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_BLCKNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="70" width="91" height="14" uuid="c1ac409d-3b43-4a9e-8bc2-ca6da7a926c9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Block  :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="87" width="549" height="1" uuid="ef6a8fc4-eb8c-4275-8ecb-4bb7dfcbac89"/>
+			</line>
+			<textField>
+				<reportElement x="-2" y="88" width="545" height="14" backcolor="#CCCCFF" uuid="6266e26c-5330-4dbf-8b90-e5cbdcadc73a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     PROPERTY TAX DEMAND BILL FOR THE                       "+ $F{vc_dmndyear}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="100" width="563" height="20" forecolor="#FFFF00" backcolor="#0F0F7F" uuid="7c051413-85bc-44cb-9742-c12945d4f88c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["                              Property Tax        Education Tax            Library Cess           UAC Penalty                  Total Rs."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="120" width="91" height="14" uuid="8fc5052a-7044-45f3-8c51-fe4a097e5a3e"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Current]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="138" width="91" height="14" uuid="f6d1efc6-08f0-4b94-aee1-f5704da1ccc9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[1st Half
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="158" width="91" height="14" uuid="512808d1-867c-43e3-b98f-5aa672ef2d8b"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[2nd Half Arrears]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="122" width="78" height="14" uuid="e1df2a4e-658d-40c5-8214-8c7cb11cfdea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnpt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="122" width="78" height="14" uuid="11f2503a-a858-45fc-8b64-6448502a4f9d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnlcs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="122" width="78" height="14" uuid="39942a30-c3fd-4fbe-bd2f-566d2df5d584"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crned}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="122" width="115" height="14" uuid="61daafa9-8208-4fc5-825a-168023fb26f9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnuauthcnstplty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="180" width="148" height="14" uuid="2e47875d-b59c-4755-936f-00416519885a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Penalty on Arrear upto]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="158" width="78" height="14" uuid="5bc78e32-818c-4574-b3b6-ca8b1dbf93af"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_arrpt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="120" width="100" height="20" uuid="3fdb30da-a192-4e95-b9c9-0f913c90c4f2"/>
+				<textFieldExpression><![CDATA[$V{Current_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="157" width="78" height="14" uuid="3961ca03-3368-45be-a643-0a053956e617"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_arred}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="157" width="78" height="14" uuid="b494acc3-26a7-4892-8d21-ea6b93e1e470"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_arrlcs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="157" width="112" height="14" uuid="71d7430e-5455-44af-aa2c-0ec3b722efea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_arruauthcnstplty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="156" width="100" height="20" uuid="7b8fd907-e236-4bd6-b371-305c4737aef0"/>
+				<textFieldExpression><![CDATA[$V{Arrears_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="136" width="100" height="20" uuid="1b4a92cb-9d38-43bc-80d3-c3b1bb41f1a5"/>
+				<textFieldExpression><![CDATA[$V{Current_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="138" width="115" height="14" uuid="6f148c7f-b903-43a6-a436-82fc18c6a700"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnuauthcnstplty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="138" width="78" height="14" uuid="d8d64558-f858-4db1-b0a7-30296f60a619"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnpt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="135" width="78" height="14" uuid="40d23164-16ed-4769-9806-ff00afe04f74"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crnlcs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="136" width="78" height="14" uuid="b9dde993-9c7e-4830-8c1f-8f8790f723ff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_crned}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="180" width="92" height="14" uuid="9bf2cb4c-a910-4aea-9214-409a71607d94"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{d_pltyonarrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="202" width="83" height="14" uuid="a229d62b-16f4-434e-9012-4fbb65fbadaf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Total]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="201" width="100" height="20" uuid="800fa907-25ca-439d-b84f-6daa6d31877a"/>
+				<textFieldExpression><![CDATA[$V{Total_Demand}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="257" width="122" height="14" uuid="5d641211-c6c2-47b6-8b46-286c874a2f90"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Total Adjustments]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="284" width="258" height="14" uuid="40a1634a-d35b-44a2-b49b-f305b79e4097"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Total_Demand}-$F{d_adjdamt}-$V{Demand_Adjs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="225" width="100" height="20" uuid="fdd1dff3-5a40-4705-ab90-c535449d50a0"/>
+				<textFieldExpression><![CDATA[$V{Demand_Adjs}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="7" y="275" width="549" height="1" uuid="4b311e5c-d8ce-4fec-aae5-55ab7e41bab2"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="281" width="122" height="18" uuid="ee1c7251-0ec5-4e23-9acf-b325249a392d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Net Total]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="299" width="549" height="18" uuid="f300e923-4b76-4c15-a3a7-69b70b61cdbb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                                                                 NET AMOUNT PAYBLE WITH PENALTY]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="318" width="549" height="18" uuid="97b78a3c-ec5f-45fc-b8b3-b9b57439e140"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[if paid before       Arr.with penalty      Curr.Year Tax with Penalty     Total Rs.]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

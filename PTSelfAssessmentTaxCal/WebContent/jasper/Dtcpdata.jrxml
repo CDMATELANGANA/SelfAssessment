@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Dtcpdata" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29b101ac-fcbe-40e1-b9e0-450ee427740f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="120"/>
+	<parameter name="ID" class="java.lang.String"/>
+	<parameter name="block_no_code" class="java.lang.String"/>
+	<parameter name="building_cls" class="java.lang.String"/>
+	<parameter name="building_type" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     id,
+     aadharnumber,
+     block_no_code,
+     building_age,
+     building_cls,
+     building_plan_aprvl_code,
+     building_type,
+     districtcode,
+     electionwardcode,
+     emasRegNo,
+     emas_status,
+     entry_date,
+     length,
+     localitycode,
+     mobilenumber,
+     occupant_type,
+     occupantname,
+     occupantsurname,
+     ownercity,
+     ownername,
+     ownershiptype,
+     reg_date,
+     reg_doc_no,
+     relationname,
+     relationsurname,
+     revenue_ward_code,
+     street_name_code,
+     surname,
+     ulbcode,
+     width,
+     zonecode,
+     dtcpfilenumber
+FROM
+     `taxcal`.`dtcp_application` dtcp_application
+WHERE
+     id = $P{ID}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aadharnumber" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="block_no_code" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="building_age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="building_cls" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="building_plan_aprvl_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="building_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="districtcode" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="electionwardcode" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emasRegNo" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emas_status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="entry_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="length" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localitycode" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobilenumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="occupant_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="occupantname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="occupantsurname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ownercity" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ownername" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ownershiptype" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reg_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reg_doc_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="relationname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="relationsurname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="revenue_ward_code" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="street_name_code" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="surname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ulbcode" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="width" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="zonecode" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dtcpfilenumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="18" width="313" height="53" uuid="977d160c-cce3-4044-9f8d-24d8fe7f323f"/>
+				<textElement textAlignment="Justified">
+					<font size="24" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Taxcal Online Application]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="315" splitType="Stretch">
+			<textField>
+				<reportElement x="168" y="4" width="100" height="20" uuid="51e529fd-918d-4c28-a1a5-bdb08a9e0723"/>
+				<textFieldExpression><![CDATA[$F{aadharnumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="4" width="98" height="20" uuid="b5edd6f4-aa42-4eaf-85e8-e73e522b6fbe"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aadharnumber  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="7" width="100" height="20" uuid="7672e82c-b329-4309-8234-747cd9d567cb"/>
+				<textFieldExpression><![CDATA[$F{ownername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="5" width="98" height="20" uuid="2fa56233-a032-45bc-9298-d4e1d7050d7b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Owner Name  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="204" width="100" height="20" uuid="de89d965-4abb-4b5a-a326-7c243c1fcc73"/>
+				<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="207" width="100" height="20" uuid="20a975d2-26ca-4ea5-b97e-bfd84212d8ee"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Surname  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="32" width="100" height="20" uuid="d610190f-12a4-40e9-88b8-6e0b543efcaf"/>
+				<textFieldExpression><![CDATA[$F{building_age}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="31" width="100" height="20" uuid="93e91049-4561-40f8-89e0-01adc5e8d49a"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Building Age  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="32" width="100" height="20" uuid="260059a5-5ae5-4456-9317-27d83f7d1dcf"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Block Discription  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="233" width="100" height="20" uuid="6e2f293b-024c-4bf4-87c2-4b1376d4cf4f"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Building Class  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="56" width="100" height="20" uuid="42f6fa4a-f5bb-4421-b579-747cb187c6e9"/>
+				<textFieldExpression><![CDATA[$F{building_plan_aprvl_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="56" width="149" height="20" uuid="d623c017-5185-42c8-b1b2-ea5ba07b7364"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Building plan aprvl code  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="55" width="100" height="20" uuid="9839d660-37e2-4f1d-90e4-f2d6c54a98e2"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Building Type  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="205" width="100" height="20" uuid="b5d74c50-8e58-4533-bfe5-5c8c4261a7f1"/>
+				<textFieldExpression><![CDATA[$F{electionwardcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="205" width="117" height="20" uuid="0978ba1f-fd7a-462b-81da-cfc059e0e9c5"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Election Ward Code  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="82" width="100" height="20" uuid="1a669aa4-e066-403c-a1fe-72ba03819a1e"/>
+				<textFieldExpression><![CDATA[$F{length}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="82" width="100" height="20" uuid="c6b1bd62-fdb9-4463-b1da-668353300a3e"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Length  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="83" width="100" height="20" uuid="821f51e7-0c44-435f-ab9a-8bbe77d6475b"/>
+				<textFieldExpression><![CDATA[$F{localitycode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="81" width="100" height="20" uuid="d6cffab5-1ab3-4cd7-bc27-e0be125f4aef"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Locality Code  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="232" width="100" height="20" uuid="971da0d8-710e-481d-8b7c-cb8ca1b73527"/>
+				<textFieldExpression><![CDATA[$F{mobilenumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="230" width="100" height="20" uuid="6b257081-c9da-4607-9864-6d4b38716965"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile Number  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="106" width="100" height="20" uuid="f2029c2a-190f-4b7d-8327-0953a9d8e07c"/>
+				<textFieldExpression><![CDATA[$F{occupant_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="106" width="100" height="20" uuid="b27a1c18-51cd-4134-90cd-c714e88c33b4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Occupant Type  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="106" width="100" height="20" uuid="0edd8259-44d0-4879-8071-1a6e7e3b2fd2"/>
+				<textFieldExpression><![CDATA[$F{occupantname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="104" width="100" height="20" uuid="dc5e5c5b-d2bd-4d2b-9114-2e37e32bd541"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Occupant Name  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="259" width="100" height="20" uuid="d9045234-63a0-4761-ad2f-4eb7eae1a2b8"/>
+				<textFieldExpression><![CDATA[$F{occupantsurname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="259" width="126" height="20" uuid="d9e32edd-b904-4261-9c01-acde128a7112"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Occupant Surname  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="130" width="100" height="20" uuid="6df8ecb5-e965-47d8-9010-66a2b1062200"/>
+				<textFieldExpression><![CDATA[$F{ownercity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="130" width="100" height="20" uuid="d0d67c17-92e6-4e49-94cb-ebc00d87ffc6"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Owner City  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="128" width="100" height="20" uuid="2aa8f7c0-e420-470d-97db-1f479ce3ebdc"/>
+				<textFieldExpression><![CDATA[$F{ownershiptype}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="126" width="100" height="20" uuid="1c2ada00-959b-4e32-9440-ebfb5a4eac97"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ownership Type  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="283" width="100" height="20" uuid="6f1427be-8229-4582-b037-768b17d21a2f"/>
+				<textFieldExpression><![CDATA[$F{relationname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="283" width="100" height="20" uuid="c1200104-ee62-4394-8161-374441ec51e4"/>
+				<textElement>
+					<font size="11" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Relation Name  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="155" width="100" height="20" uuid="1ff7eb5d-e337-4369-a3db-631bd8117da7"/>
+				<textFieldExpression><![CDATA[$F{relationsurname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="155" width="117" height="20" uuid="c72bf3e5-0544-414e-83b9-af2a1486008b"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relation Surname  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="153" width="100" height="20" uuid="df464ef1-3806-4b56-b9a7-d3aa3241510d"/>
+				<textFieldExpression><![CDATA[$F{revenue_ward_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="151" width="100" height="20" uuid="5fb24951-d2af-4ec2-bb9a-5be2546f1889"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Revenue ward:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="256" width="100" height="20" uuid="b8c565ae-37b4-4d0c-aa56-70aca2445592"/>
+				<textFieldExpression><![CDATA[$F{street_name_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="255" width="116" height="20" uuid="32332d31-038d-4456-ac51-fc35fe847497"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Street Name Code  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="181" width="100" height="20" uuid="7cf91e12-85f7-4a7b-bbb8-f4ed35e72625"/>
+				<textFieldExpression><![CDATA[$F{width}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="181" width="100" height="20" uuid="76be8b58-67a9-4da0-acff-badc9df25783"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Width  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="179" width="100" height="20" uuid="5a93e8f4-ffd0-4897-a716-52536b9532ad"/>
+				<textFieldExpression><![CDATA[$F{zonecode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="179" width="100" height="20" uuid="7c012e4f-65dd-4274-88a6-cd4d2185cf74"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zone Code  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="279" width="100" height="20" uuid="74689b82-3e77-486e-b5c6-4e3cf0d8e4d0"/>
+				<textFieldExpression><![CDATA[$F{dtcpfilenumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="279" width="115" height="20" uuid="d912d17c-eaea-4f9e-8120-d58085a4dfd0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dtcp File Number  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="32" width="100" height="20" uuid="c1e9a256-6ca1-4717-b70e-aa9b11faee33"/>
+				<textFieldExpression><![CDATA[$P{block_no_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="55" width="100" height="20" uuid="b6ac3994-f7b0-4d9a-972c-187dddebe3eb"/>
+				<textFieldExpression><![CDATA[$P{building_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="233" width="100" height="20" uuid="b2fed935-65f4-4014-92dc-0c0ded67328d"/>
+				<textFieldExpression><![CDATA[$P{building_cls}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="106" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="84" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
